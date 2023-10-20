@@ -1,28 +1,25 @@
 import React from 'react'
 import { useState } from 'react'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 
 function Navigationbar() {
     const [expanded, setExpanded] = useState(false);
     return (
-        <Navbar
+      <Navbar
       bg="light"
       expand="lg"
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
+      className="mx-auto"
     >
-      <Navbar.Brand href="#home">Your Brand</Navbar.Brand>
+      <Navbar.Brand href="#home">CROSS FLEX</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="mx-auto"> {/* Center the links horizontally */}
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#about">About</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/1">Action 1</NavDropdown.Item>
-            <NavDropdown.Item href="#action/2">Action 2</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3">Action 3</NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link href="#signup">SignUp</Nav.Link>
+          <Nav.Link href="#login">Login</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
