@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 function Navigationbar() {
   const [expanded, setExpanded] = useState(false);
@@ -35,10 +36,9 @@ function Navigationbar() {
               <Link to="/register" className="nav-link" style={{ color: 'white' }}>Register</Link>
             </li>
             <li className="nav-item">
-              <Link to="/signup" className="nav-link" style={{ color: 'white' }}>Signup</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/login" className="nav-link" style={{ color: 'white' }}>Login</Link>
+              <Button variant="dark" as={Link} to="/login">
+                Login
+              </Button>
             </li>
           </ul>
         </Nav>
