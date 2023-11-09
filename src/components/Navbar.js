@@ -1,47 +1,50 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import Homepage from './Homepage';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Navigationbar() {
   const [expanded, setExpanded] = useState(false);
+
   return (
     <Navbar
-      bg="light"
+      bg="dark"
+      variant="dark"
       expand="lg"
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
       className="mx-auto"
     >
-      <Navbar.Brand href="#home">CROSS FLEX</Navbar.Brand>
+      <Navbar.Brand className="navbar-brand">
+        <Link to="/" className="nav-link" style={{ color: 'white' }}>CROSS FLEX</Link>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mx-auto"> {/* Center the links horizontally */}
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
+        <Nav className="mx-auto">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link to="/" className="nav-link" style={{ color: 'white' }}>Home</Link>
             </li>
-            <li>
-              <Link to="/about">About</Link>
+            <li className="nav-item">
+              <Link to="/about" className="nav-link" style={{ color: 'white' }}>About</Link>
             </li>
-            <li>
-            <Link to="/contact">Contact</Link>
+            <li className="nav-item">
+              <Link to="/contact" className="nav-link" style={{ color: 'white' }}>Contact</Link>
             </li>
-            <li>
-            <Link to="/register">Register</Link>
+            <li className="nav-item">
+              <Link to="/register" className="nav-link" style={{ color: 'white' }}>Register</Link>
             </li>
-            <li>
-            <Link to="/signup">Signup</Link>
-             </li>
-             <li>
-              <Link to="/login">Login</Link>
-             </li>
+            <li className="nav-item">
+              <Link to="/signup" className="nav-link" style={{ color: 'white' }}>Signup</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/login" className="nav-link" style={{ color: 'white' }}>Login</Link>
+            </li>
           </ul>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  )
+  );
 }
 
-export default Navigationbar
+export default Navigationbar;

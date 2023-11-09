@@ -8,23 +8,22 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Register from './components/Register'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <div>
-      <Navbar/>
-
+      <Navbar />
       <Routes>
-        <Route path='/' element={<Homepage/>} />
-        <Route path='/about' element={<About/>} />
-        <Route path='/signup' element={<Signup/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/register' element={<Register/>} />
-        <Route path='/contact' element={<Contact/>} />
-        
+        <Route path='/' element={<Homepage />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
+      <Footer />
 
-      
     </div>
   );
 }
