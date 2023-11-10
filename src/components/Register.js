@@ -1,7 +1,19 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import RegisterForm from '../img/bg.jpg';
 
 function Register() {
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
+  const imageStyle = {
+    width: '100%',
+    height: 'auto',
+  };
+
   const footerStyle = {
     background: '#333',
     padding: '10px',
@@ -10,16 +22,18 @@ function Register() {
     bottom: 0,
     width: '100%',
     color: 'white',
-};
+  };
 
-const linkStyle = {
+  const linkStyle = {
     color: 'white',
     textDecoration: 'underline',
     margin: '0 10px',
-};
+  };
+
   return (
-    <div>
+    <div style={containerStyle}>
       <h1>Register</h1>
+      <img src={RegisterForm} alt="Landing Page" style={imageStyle} />
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -43,6 +57,7 @@ const linkStyle = {
           Register
         </Button>
       </Form>
+
       <div style={footerStyle}>
         <p>© 2023 Your Fitness App | <a href="/privacy-policy" style={linkStyle}>Privacy Policy</a> | <a href="/terms-of-service" style={linkStyle}>Terms of Service</a></p>
       </div>

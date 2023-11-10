@@ -1,7 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AboutInfo from "../img/about.jpg";
 
 function About() {
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
+  const imageStyle = {
+    width: '100%',
+    height: 'auto',
+  };
+
   const footerStyle = {
     background: '#333',
     padding: '10px',
@@ -10,17 +22,18 @@ function About() {
     bottom: 0,
     width: '100%',
     color: 'white',
-};
+  };
 
-const linkStyle = {
+  const linkStyle = {
     color: 'white',
     textDecoration: 'underline',
     margin: '0 10px',
-};
+  };
+
   return (
-    <div>
+    <div style={containerStyle}>
       <h1>About Us</h1>
-      {/* <img src={gymImage} alt="Gym Workout" style={{ width: '100%', height: 'auto' }} /> */}
+      <img src={AboutInfo} alt="Landing Page" style={imageStyle} />
       <p>Welcome to Fitness Fusion, where we turn sweat into success!</p>
       <p>At Fitness Fusion, we're not just a gym; we're a community of fitness enthusiasts committed to transforming lives. Our team of certified personal trainers is here to guide you on your fitness journey.</p>
       <p>What sets us apart? Our personalized workout tracking system! With state-of-the-art technology, we tailor your fitness plan to your unique goals. Track your progress, set new milestones, and celebrate your achievements with us.</p>
