@@ -51,6 +51,8 @@ function ContactForm() {
       email: '',
       message: '',
     });
+    console.log(setFormData, "Message sent!")
+    alert("Message is now sent!")
   };
 
   return (
@@ -98,8 +100,6 @@ function ContactForm() {
           Submit
         </Button>
       </Form>
-
-      
     </div>
   );
 }
