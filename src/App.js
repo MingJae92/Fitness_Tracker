@@ -7,6 +7,7 @@ import About from './components/About';
 import Login from './components/Login';
 import Register from './components/Register'
 import Contact from './components/Contact'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
-     
+     <Footer/>
 
     </div>
   );

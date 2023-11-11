@@ -14,6 +14,10 @@ function Register() {
     height: 'auto',
   };
 
+  const headerStyle = {
+    padding: '20px', // Add equal padding to the header
+  };
+
   const footerStyle = {
     background: '#333',
     padding: '10px',
@@ -32,7 +36,7 @@ function Register() {
 
   return (
     <div style={containerStyle}>
-      <h1>Register</h1>
+      <h1 style={headerStyle}>Register</h1>
       <img src={RegisterForm} alt="Landing Page" style={imageStyle} />
       <Form>
         <Form.Group controlId="formBasicEmail">
@@ -58,9 +62,7 @@ function Register() {
         </Button>
       </Form>
 
-      <div style={footerStyle}>
-        <p>© 2023 Your Fitness App | <a href="/privacy-policy" style={linkStyle}>Privacy Policy</a> | <a href="/terms-of-service" style={linkStyle}>Terms of Service</a></p>
-      </div>
+      
     </div>
   );
 }

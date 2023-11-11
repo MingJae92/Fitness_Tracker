@@ -6,7 +6,8 @@ import LoginForm from '../img/blog-1.jpg';
 function Login() {
   const imageStyle = {
     width: '100%',
-    height: 'auto',
+    height: '100vh', // Set the height to 100% of the viewport height
+    objectFit: 'cover', // Ensure the image covers the entire container
   };
   const footerStyle = {
     background: '#333',
@@ -45,18 +46,7 @@ function Login() {
           </Button>
         </Form>
       </Container>
-      <div style={footerStyle}>
-        <p>
-          © 2023 Your Fitness App |{' '}
-          <a href="/privacy-policy" style={linkStyle}>
-            Privacy Policy
-          </a>{' '}
-          |{' '}
-          <a href="/terms-of-service" style={linkStyle}>
-            Terms of Service
-          </a>
-        </p>
-      </div>
+      
     </div>
   );
 }

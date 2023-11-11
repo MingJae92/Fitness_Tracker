@@ -99,9 +99,7 @@ function ContactForm() {
         </Button>
       </Form>
 
-      <div style={footerStyle}>
-        <p>© 2023 Your Fitness App | <a href="/privacy-policy" style={linkStyle}>Privacy Policy</a> | <a href="/terms-of-service" style={linkStyle}>Terms of Service</a></p>
-      </div>
+      
     </div>
   );
 }
