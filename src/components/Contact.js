@@ -11,7 +11,7 @@ function ContactForm() {
 
   const headerStyle = {
     textAlign: 'center',
-    marginTop: '20px', // Adjust the margin-top as needed
+    padding: '20px 0', // Equal padding of 20px at the top and bottom
   };
 
   const footerStyle = {
@@ -60,8 +60,45 @@ function ContactForm() {
       </div>
       <img src={Contact} alt="Landing Page" style={imageStyle} />
       <Form onSubmit={handleSubmit}>
-        {/* Form fields go here */}
+        <Form.Group controlId="formName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter your name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter your email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formMessage">
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            placeholder="Enter your message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
       </Form>
+
       <div style={footerStyle}>
         <p>© 2023 Your Fitness App | <a href="/privacy-policy" style={linkStyle}>Privacy Policy</a> | <a href="/terms-of-service" style={linkStyle}>Terms of Service</a></p>
       </div>
