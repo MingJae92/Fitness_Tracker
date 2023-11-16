@@ -24,8 +24,10 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  
 
   // Handle input changes in the form fields
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
@@ -50,6 +52,7 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Perform actions on form submission, e.g., send data to a server
+    
     console.log('Form submitted with data:', { userName, email, password, confirmPassword });
     alert("You are now signed up!")
   };
