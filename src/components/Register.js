@@ -26,7 +26,7 @@ function Register() {
     const hasUpperCase = /[A-Z]/.test(value); // Check if the password has at least one uppercase letter
     const hasLowerCase = /[a-z]/.test(value); // Check if the password has at least one lowercase letter
     const hasNumber = /\d/.test(value); // Check if the password has at least one digit
-    const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(value); // Check if the password has at least one special symbol
+    const hasSymbol = /[!@#$%^&*()_+,.?":{}|<>]/.test(value); // Check if the password has at least one special symbol
 
     if (!value) {
       return 'Password is required';
@@ -51,7 +51,7 @@ function Register() {
   };
 
   // State variables to store form input values
-  const { register, handleSubmit, formState: { errors, isDirty } } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       username: '',
       email: '',
@@ -60,8 +60,8 @@ function Register() {
     },
   });
 
-  const handleRegister = (data) => {
-    console.log(data);
+  const handleRegister = async (data) => {
+    console.log(JSON.stringify(data));
     alert('You are now registered!');
   };
 
@@ -134,7 +134,7 @@ function Register() {
         </Form.Group>
 
         {/* Submit button to register */}
-        <Button variant="primary" type="submit" >
+        <Button variant="primary" type="submit">
           Register
         </Button>
       </Form>
