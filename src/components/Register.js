@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react'; // Import useRef
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'react-bootstrap';
 import RegisterForm from '../img/bg.jpg';
@@ -51,7 +51,7 @@ function Register() {
   };
 
   // State variables to store form input values
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors }, watch: watchFields } = useForm({
     defaultValues: {
       username: '',
       email: '',
@@ -59,11 +59,26 @@ function Register() {
       confirmPassword: '',
     },
   });
+  
 
   const handleRegister = async (data) => {
-    console.log(JSON.stringify(data));
-    alert('You are now registered!');
+    try {
+      console.log(JSON.stringify(data));
+      alert('You are now registered!');
+      
+      // Assuming watchFields returns the password value
+      const password = watchFields("password");
+      console.log(password);
+  
+      // Perform any additional registration logic or API calls here
+      
+    } catch (error) {
+      console.error('Registration failed:', error);
+      // You can handle the error here, for example, show an error message to the user
+      alert('Registration failed. Please try again.');
+    }
   };
+  
 
   return (
     <div style={containerStyle}>
