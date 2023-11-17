@@ -26,13 +26,14 @@ function Register() {
     const hasUpperCase = /[A-Z]/.test(value); // Check if the password has at least one uppercase letter
     const hasLowerCase = /[a-z]/.test(value); // Check if the password has at least one lowercase letter
     const hasNumber = /\d/.test(value); // Check if the password has at least one digit
+    const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(value); // Check if the password has at least one special symbol
 
     if (!value) {
       return 'Password is required';
     } else if (value.length < minLength) {
       return `Password should have at least ${minLength} characters`;
-    } else if (!hasUpperCase || !hasLowerCase || !hasNumber) {
-      return 'Password should include at least one uppercase letter, one lowercase letter, and one digit';
+    } else if (!hasUpperCase || !hasLowerCase || !hasNumber || !hasSymbol) {
+      return 'Password should include at least one uppercase letter, one lowercase letter, one digit, and one special symbol';
     }
 
     return true; // Validation passed
@@ -133,7 +134,7 @@ function Register() {
         </Form.Group>
 
         {/* Submit button to register */}
-        <Button variant="primary" type="submit" disabled={!isDirty}>
+        <Button variant="primary" type="submit" >
           Register
         </Button>
       </Form>
