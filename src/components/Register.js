@@ -21,7 +21,7 @@ function Register() {
   };
 
   // State variables to store form input values
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors, isDirty } } = useForm({
     defaultValues: {
       username: '',
       email: '',
@@ -29,6 +29,24 @@ function Register() {
       confirmPassword: '',
     },
   });
+
+  // Password validation function
+  const validatePassword = (value) => {
+    const minLength = 8; // Minimum length for the password
+    const hasUpperCase = /[A-Z]/.test(value); // Check if the password has at least one uppercase letter
+    const hasLowerCase = /[a-z]/.test(value); // Check if the password has at least one lowercase letter
+    const hasNumber = /\d/.test(value); // Check if the password has at least one digit
+
+    if (!value) {
+      return 'Password is required';
+    } else if (value.length < minLength) {
+      return `Password should have at least ${minLength} characters`;
+    } else if (!(hasUpperCase && hasLowerCase && hasNumber)) {
+      return 'Password should include at least one uppercase letter, one lowercase letter, and one digit';
+    }
+
+    return true; // Validation passed
+  };
 
   const handleRegister = (data) => {
     console.log(data);
@@ -79,7 +97,12 @@ function Register() {
         {/* Input field for password */}
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Password:</Form.Label>
-          <Form.Control type="password" {...register('password', { required: 'Password required' })} />
+          <Form.Control
+            type="password"
+            {...register('password', {
+              validate: validatePassword,
+            })}
+          />
           <div style={{ color: 'red' }}>{errors.password?.message}</div>
         </Form.Group>
 
@@ -91,7 +114,7 @@ function Register() {
         </Form.Group>
 
         {/* Submit button to register */}
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" >
           Register
         </Button>
       </Form>
