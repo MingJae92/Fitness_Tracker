@@ -2,6 +2,8 @@ import React, { useRef } from 'react'; // Import useRef
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'react-bootstrap';
 import RegisterForm from '../img/bg.jpg';
+import axios from 'axios';
+import { stringify } from 'nodemon/lib/utils';
 
 function Register() {
   // Styles for the container, image, and header
@@ -62,7 +64,9 @@ function Register() {
   
 
   const handleRegister = async (data) => {
+    
     try {
+     await axios.post("http://localhost:9000/register", data)
       console.log(JSON.stringify(data));
       alert('You are now registered!');
       
