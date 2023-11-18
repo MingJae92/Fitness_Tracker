@@ -51,13 +51,13 @@ const Footer = () => {
                             <h5>Social Media</h5>
                             <ul className="list-unstyled">
                                 <li>
-                                    <a href="#facebook">Facebook</a>
+                                    {/* <a href="#facebook">Facebook</a> */}
                                 </li>
                                 <li>
-                                    <a href="#twitter">Twitter</a>
+                                    {/* <a href="#twitter">Twitter</a> */}
                                 </li>
                                 <li>
-                                    <a href="#linkedin">LinkedIn</a>
+                                    {/* <a href="#linkedin">LinkedIn</a> */}
                                 </li>
                             </ul>
                         </Col>
