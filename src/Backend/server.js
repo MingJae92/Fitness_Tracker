@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-// import register_routes from '../Routes/register_routes.js' 
+import registerRoutes from './Routes/register_routes' 
 
 dotenv.config({ path: '../../config/.env' });
 
@@ -34,7 +34,7 @@ connectDB();
 
 app.use(express.json());
 app.use('/v1', route);
-// app.use("/register", register_routes)
+app.use("/register", registerRoutes)
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}. Here we go!`);
